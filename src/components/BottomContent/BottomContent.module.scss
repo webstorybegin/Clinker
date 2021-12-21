@@ -31,6 +31,10 @@
       @include rubber-font(64, 35);
       line-height: normal;
     }
+
+     @media (max-width: map-get($container-max-width, xs)) {
+      margin-top: 50px;
+    }
   }
 
   .subtitle {
