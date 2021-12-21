@@ -1,0 +1,12 @@
+@import '../../styles/variables.scss';
+
+.app {
+  max-width: map-get($container-max-width, def);
+  margin: 0 auto;
+  font-family: Ubuntu;
+  padding-bottom: 125px;
+
+  @media(max-width: map-get($container-max-width, lg)) {
+    padding-bottom: 20px;
+  }
+}

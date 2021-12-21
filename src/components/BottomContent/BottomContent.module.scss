@@ -1,0 +1,126 @@
+@import "../../styles/variables.scss";
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.leftColumn {
+  padding: 0 20px;
+  width: 500px;
+  height: 684px;
+  margin: 0 auto;
+
+  @media (max-width: map-get($container-max-width, xl)) {
+    width: 100%;
+    height: inherit;
+    margin-bottom: 20px;
+  }
+
+  .title {
+    font-size: 64px;
+    color: $black;
+    line-height: 72px;
+    letter-spacing: 0.03em;
+    font-weight: 500;
+    margin-bottom: 50px;
+
+    @media (max-width: map-get($container-max-width, md)) {
+      @include rubber-font(64, 35);
+      line-height: normal;
+    }
+  }
+
+  .subtitle {
+    font-size: 20px;
+    color: $light-grey;
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 50px;
+
+    @media (max-width: map-get($container-max-width, md)) {
+      @include rubber-font(20, 14);
+    }
+  }
+
+  button {
+    position: relative;
+    padding: 15px 60px 15px 20px;
+    background: $orange;
+    color: $white;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &:before {
+      content: "";
+      position: absolute;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: url("../../resources/img/arrowRight.svg") 0 0 no-repeat;
+      width: 6px;
+      height: 11px;
+    }
+  }
+}
+
+.rightColumn {
+  padding: 0 17px;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: map-get($container-max-width, xl)) {
+    margin: 0 auto;
+  }
+
+  @media (max-width: map-get($container-max-width, md)) {
+    width: 100%;
+  }
+
+  .rightColumnItemLeft {
+    background: url("../../resources/img/bottom1.png") 0 0 no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 500px;
+    height: 768px;
+
+    @media (max-width: map-get($container-max-width, md)) {
+      width: 100%;
+    }
+  }
+
+  .rightColumnItemRight {
+    @media (max-width: map-get($container-max-width, md)) {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .rightColumnItemRightItem:nth-child(1) {
+      background: url("../../resources/img/bottom2.png") 0 0 no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 500px;
+      height: 384px;
+
+      @media (max-width: map-get($container-max-width, md)) {
+        width: 100%;
+      }
+    }
+
+    .rightColumnItemRightItem:nth-child(2) {
+      background: url("../../resources/img/bottom3.png") 0 0 no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 500px;
+      height: 384px;
+
+      @media (max-width: map-get($container-max-width, md)) {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+$maxWidth: 1920;
+
+@mixin rubber-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 400;
+  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+$container-max-width: (
+  def: 1920px,
+  xxl: 1900px,
+  xl: 1650px,
+  lgw: 1200px,
+  lg: 1100px,
+  md: 1040px,
+  xs: 360px,
+);
+
+$white: #ffffff;
+$light-white: #efeff1;
+
+$light-grey: #6a6b73;
+$grey: #a2a4a9;
+$grey-smoke: #cbcbce;
+
+$orange: #ed5555;
+
+$black: #0d0d0f;
+$dark-black: #000000;

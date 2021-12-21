@@ -1,0 +1,130 @@
+@import "../../styles/variables.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 88px;
+  padding: 0 32px;
+
+  @media (max-width: map-get($container-max-width, lg)) {
+    height: 64px;
+  }
+
+  span {
+    cursor: pointer;
+
+    @include rubber-font(16, 10);
+
+    @media (min-width: map-get($container-max-width, def) ) {
+      font-size: 16px;
+    }
+  }
+
+  .logo {
+    background: url("../../resources/img/logo.svg") 0 0 no-repeat;
+    width: 132px;
+    height: 43px;
+    cursor: pointer;
+  }
+
+  .nav span {
+    position: relative;
+    letter-spacing: 0.08em;
+    color: $light-grey;
+    padding-right: 30px;
+    margin-right: 40px;
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      &:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: url("../../resources/img/arrow.svg") 0 0 no-repeat;
+        width: 13px;
+        height: 6px;
+      }
+    }
+
+    &:nth-child(3),
+    &:nth-child(4) {
+      padding-right: 0;
+    }
+  }
+
+  .contacts {
+    position: relative;
+    span {
+      color: $grey;
+      padding: 15px 47px 15px 23px;
+      margin-right: 40px;
+      border-left: 1px solid $light-white;
+      border-right: 1px solid $light-white;
+    }
+
+    a {
+      color: $black;
+      letter-spacing: 0.03em;
+      @include rubber-font(18, 10);
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 70px;
+      top: 50%;
+      border: 7px solid transparent;
+      border-top: 8px solid $grey-smoke;
+    }
+  }
+
+  .burger {
+    display: none;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      background: $dark-black;
+      height: 4px;
+    }
+
+    &:before {
+      width: 16px;
+    }
+    
+    &:after {
+      width: 10px;
+      top: 10px;
+    }
+   
+  }
+
+  @media (max-width: map-get($container-max-width, lg)) {
+    .logo {
+      background: url('../../resources/img/telMob.svg') 0 0 no-repeat;
+      width: 18px;
+      height: 18px;
+    }
+    
+    .nav span {
+      display: none;
+    }
+
+    .contacts {
+      display: none;
+    }
+
+    .burger {
+      display: block;
+    }
+
+  }
+}
